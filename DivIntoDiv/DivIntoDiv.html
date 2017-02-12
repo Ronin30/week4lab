@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="jquery.js">  </script>
+      <link rel="stylesheet" type="text/css" href="DivIntoDiv.css"
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Move one DIV element inside another.</title>
+  </head>
+  <body>
+    <div id="nonSelected">
+
+  <!-- TWO INPUT TAGS -->
+  <input id="btnDefault" onclick="moveButton(this)" type="button" class="btn btn-default" value="Default" />
+  <input id="btnPrimary" onclick="moveButton(this)" type="button" class="btn btn-primary" value="Primary" />
+
+  <!-- THREE BUTTON TAGS -->
+  <button id="btnDanger" onclick="moveButton(this)" type="button" class="btn btn-danger">Danger</button>
+  <button id="btnWarning" onclick="moveButton(this)" type="button" class="btn btn-warning">Warning</button>
+  <button id="btnSuccess" onclick="moveButton(this)" type="button" class="btn btn-success">Success</button>
+
+</div>
+
+
+<div id="selected">
+
+</div>
+
+<script>
+function moveButton(elem){
+  if( $(elem).parent().attr("id") == "nonSelected" ){
+      $(elem).detach().appendTo('#selected');
+  }
+  else{
+      $(elem).detach().appendTo('#nonSelected');
+  }
+}
+</script>
+  </body>
+</html>
